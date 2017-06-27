@@ -1,6 +1,7 @@
 import abc
 
 
+
 class ChessPiece(metaclass=abc.ABCMeta):
 
     def __init__(self, c, x, y, name):
@@ -15,6 +16,10 @@ class ChessPiece(metaclass=abc.ABCMeta):
 
     def __repr__(self):
         return self.name
+
+    def coord(self):
+        return self.x, self.y
+
 
 
 class Soldier(ChessPiece):
