@@ -1,5 +1,6 @@
 import abc
-
+from colorama import init, Fore
+init(autoreset=True)
 
 
 class ChessPiece(metaclass=abc.ABCMeta):
@@ -15,11 +16,12 @@ class ChessPiece(metaclass=abc.ABCMeta):
         """ chess piece move methon"""
 
     def __repr__(self):
+        if self.c == 1:
+            return Fore.LIGHTRED_EX + self.name + Fore.RESET
         return self.name
 
     def coord(self):
         return self.x, self.y
-
 
 
 class Soldier(ChessPiece):
