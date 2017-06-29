@@ -6,7 +6,7 @@ init(autoreset=True)
 class ChessPiece(metaclass=abc.ABCMeta):
 
     def __init__(self, c, x, y, name):
-        self.c = c # 0-red, 1-black
+        self.c = c # 1-red
         self.x = x # (x, y) coordinate
         self.y = y
         self.name = name
@@ -23,18 +23,24 @@ class ChessPiece(metaclass=abc.ABCMeta):
     def coord(self):
         return self.x, self.y
 
+    def filter(self, y, name):
+        if self.c == 1 and self.y==y and self.name==name:
+            return True
+        return False
 
-class Soldier(ChessPiece):
+
+class Pawn(ChessPiece):
 
     def __init__(self, c, x, y):
         super().__init__(c, x, y, '卒' if c else '兵')
 
 
     def move(self, x_move, y_move):
-        pass
+        self.x += x_move
+        self.y += y_move
 
 
-class General(ChessPiece):
+class King(ChessPiece):
 
     def __init__(self, c, x, y):
         super().__init__(c, x, y, '将' if c else '帅')
@@ -44,7 +50,7 @@ class General(ChessPiece):
         pass
 
 
-class Vehicle(ChessPiece):
+class Chariot(ChessPiece):
 
     def __init__(self, c, x, y):
         super().__init__(c, x, y, '车' if c else '車')
@@ -72,7 +78,7 @@ class Elephant(ChessPiece):
         pass
 
 
-class Officer(ChessPiece):
+class Adviser(ChessPiece):
 
     def __init__(self, c, x, y):
         super().__init__(c, x, y, '士' if c else '仕')
@@ -88,13 +94,3 @@ class Cannon(ChessPiece):
 
     def move(self, x_move, y_move):
         pass
-
-if __name__ == '__main__':
-    s = Soldier(0, 1, 2)
-    g = General(0, 0, 4)
-    v = Vehicle(1, 0, 0)
-    h = Horse(0, 0, 1)
-    e = Elephant(0, 0, 3)
-    o = Officer(0, 0, 4)
-    c = Cannon(0, 0, 5)
-    print(s, g, v, h, e, o, c)
