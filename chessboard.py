@@ -26,8 +26,8 @@ class ChessPiece(metaclass=abc.ABCMeta):
     def coord(self):
         return self.x, self.y
 
-    def filter(self, y, name):
-        if self.c == 1 and self.y==y and self.name==name:
+    def filter(self, name):
+        if self.c == 1 and self.name==name:
             return True
         return False
 
@@ -35,19 +35,19 @@ class ChessPiece(metaclass=abc.ABCMeta):
     def step(self, direct, step):
         """pawn king chariot cannon"""
         if direct not in self._dt.keys():
-            return False
+            return False, KeyError
         x_move, y_move = 0, 0
         if step in self._step:
             x_move = self._dt[direct] * (self._step.index(step) + 1)
             if direct == '平':
-                y_move = (8-self._step.index(step)) - self.y
+                y_move = 8 - self._step.index(step) - self.y
         else:
             try:
                 x_move = self._dt[direct] * int(step)
                 if direct == '平':
-                    y_move = (9-int(step)) - self.y
+                    y_move = 9 - int(step) - self.y
             except ValueError:
-                return False
+                return False, ValueError
         return True, x_move, y_move
 
 
@@ -86,7 +86,13 @@ class Horse(ChessPiece):
         if direct not in super()._dt.keys():
             return False
         x_move = super()._dt[direct] * 2
-        y_move = super()._dt[direct] * 1
+        if step in super()._step:
+            y_move = 8 - self._step.index(step) - self.y
+        else:
+            try:
+                y_move = 9 - int(step) - self.y
+            except ValueError:
+                return False, ValueError
         return True, x_move, y_move
 
 
@@ -99,7 +105,13 @@ class Elephant(ChessPiece):
         if direct not in super()._dt.keys():
             return False
         x_move = super()._dt[direct] * 2
-        y_move = super()._dt[direct] * 2
+        if step in super()._step:
+            y_move = 8 - self._step.index(step) - self.y
+        else:
+            try:
+                y_move = 9 - int(step) - self.y
+            except ValueError:
+                return False, ValueError
         return True, x_move, y_move
 
 
@@ -111,8 +123,14 @@ class Adviser(ChessPiece):
     def step(self, direct, step):
         if direct not in super()._dt.keys():
             return False
-        x_move = super()._dt[direct] * 2
-        y_move = super()._dt[direct] * 2
+        x_move = super()._dt[direct] * 1
+        if step in super()._step:
+            y_move = 8 - self._step.index(step) - self.y
+        else:
+            try:
+                y_move = 9 - int(step) - self.y
+            except ValueError:
+                return False, ValueError
         return True, x_move, y_move
 
 
