@@ -38,7 +38,7 @@ class Launch:
 
     def show(self):
         while True:
-            os.system('cls')
+            # os.system('cls')
             # output chess board
             for i in range(10):
                 print(self.row.format(*self.chessboard[i]))
@@ -67,9 +67,8 @@ class Launch:
             return False, 'name error'
         if pace[0] in self.__special.keys():
             for i in list(range(0, 10)[::self.__special[pace[0]]]):
-                for j in self.chessboard[i]:
-                    if isinstance(j, ChessPiece) and j.filter(name):
-                        target = j
+                for target in self.chessboard[i]:
+                    if isinstance(target, ChessPiece) and target.filter(name):
                         return True, target, pace[2], pace[3]
             return False, KeyError
         # location y
@@ -89,13 +88,15 @@ class Launch:
 
     def move(self, con):
         if not con[0]:
-            return
+            return False
         _, m, pace2, pace3 = con
-        tar = m.step(pace2, pace3)
-        if tar[0]:
-            _, x_move, y_move = tar
+        boa = m.step(pace2, pace3, self.chessboard)
+        if boa[0]:
+            target = self.chessboard[m.x + boa[1]][m.y + boa[2]]
+            if isinstance(target, ChessPiece) and target.c == 1:
+                return False
             self.chessboard[m.x][m.y] = '__'
-            m.move(x_move, y_move)
+            m.move(boa[1], boa[2])
             self.chessboard[m.x][m.y] = m
 
 
