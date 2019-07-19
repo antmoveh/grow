@@ -1,5 +1,4 @@
-from chessboard import *
-import os
+from utils.chessboard import *
 
 
 class Launch:
@@ -16,13 +15,13 @@ class Launch:
         self.chessboard = self.board()
 
     def board(self):
-        pawn=((0, 3, 0), (0, 3, 2), (0, 3, 4), (0, 3, 6), (0, 3, 8), (1, 6, 0), (1, 6, 2), (1, 6, 4), (1, 6, 6), (1, 6, 8))
-        king=((0, 0, 4), (1, 9, 4))
-        chariot=((0, 0, 0), (0, 0, 8), (1, 9, 0), (1, 9, 8))
-        horse=((0, 0, 1), (0, 0, 7), (1, 9, 1), (1, 9, 7))
-        elephant=((0, 0, 2), (0, 0, 6), (1, 9, 2), (1, 9, 6))
-        adviser=((0, 0, 3), (0, 0, 5), (1, 9, 3), (1, 9, 5))
-        cannon=((0, 2, 1), (0, 2, 7), (1, 7, 1), (1, 7, 7))
+        pawn = ((0, 3, 0), (0, 3, 2), (0, 3, 4), (0, 3, 6), (0, 3, 8), (1, 6, 0), (1, 6, 2), (1, 6, 4), (1, 6, 6), (1, 6, 8))
+        king = ((0, 0, 4), (1, 9, 4))
+        chariot = ((0, 0, 0), (0, 0, 8), (1, 9, 0), (1, 9, 8))
+        horse = ((0, 0, 1), (0, 0, 7), (1, 9, 1), (1, 9, 7))
+        elephant = ((0, 0, 2), (0, 0, 6), (1, 9, 2), (1, 9, 6))
+        adviser = ((0, 0, 3), (0, 0, 5), (1, 9, 3), (1, 9, 5))
+        cannon = ((0, 2, 1), (0, 2, 7), (1, 7, 1), (1, 7, 7))
         pa = [Pawn(c, x, y) for c, x, y in pawn]
         ki = [King(c, x, y) for c, x, y in king]
         ch = [Chariot(c, x, y) for c, x, y in chariot]
@@ -84,7 +83,6 @@ class Launch:
         if len(target) != 1:
             return False, 'multiple matching'
         return True, target[0], pace[2], pace[3]
-
 
     def move(self, con):
         if not con[0]:
