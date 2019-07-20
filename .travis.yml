@@ -1,0 +1,19 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  - VERSION=latest
+
+before_install:
+  - docker build -t antmoveh/norm .
+
+script:
+  - docker images | grep antmoveh
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
