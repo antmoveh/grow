@@ -4,4 +4,4 @@
 #set -m
 
 # Start the primary process and put it in the background
-gunicorn run:app -c ./gunicorn.conf.py >>/tmp/flask.log 2>&1 &
+gunicorn run:app -c ./gunicorn.conf.py
