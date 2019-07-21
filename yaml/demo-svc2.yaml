@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-server2
+  namespace: default
+  annotations:
+    traefik.backend.circuitbreaker: "LatencyAtQuantileMS(50.0) > 500"
+spec:
+  selector:
+    app: demo
+    function: test
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8008

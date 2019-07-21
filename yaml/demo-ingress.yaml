@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-demo
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/service-weights: |
+      demo-server: 50%
+      demo-server2: 50%
+spec:
+  rules:
+  - host: server-dispatch.server
+    http:
+      paths:
+      - path: /v1
+        backend:
+          serviceName: demo-server
+          servicePort: web
+      - path: /v1
+        backend:
+          serviceName: demo-server2
+          servicePort: web
