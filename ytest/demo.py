@@ -1,55 +1,79 @@
 import requests
 from config import logger
 import time
+import http.client
+import simplejson
 
-demo_random_sleep = "/demo/random/sleep"
-demo_server_info = "/demo/server/info"
-demo_error_code = "/demo/error/code"
+# https://www.jianshu.com/p/32cd4b9d5a04
+# 原来我也以为requests 无所不能 血泪教训啊
+
+demo_random_sleep = "/v1/demo/random/sleep"
+demo_server_info = "/v1/demo/server/info"
+demo_error_code = "/v1/demo/error/code"
 server_ip = "http://127.0.0.1:8008"
-protect_pod_name = "non"  # 被保护的pod，接收到此值时会跳过错误逻辑
-headers = {
-    'Host': "server-dispatch.server",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Encoding": "gzip, deflate",
-    "Accept-Language": "en-US,en;q=0.5",
-    "Connection": "keep-alive",
-    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0"
-}
+protect_pod_name = "?protect_pod_name=demo-fsvbg"  # 被保护的pod，接收到此值时会跳过错误逻辑
+host = "server-dispatch.server"
+
 
 # 网络错误
 def NetworkErrorRatio():
-    with requests.Session() as s:
-        s.headers.update(headers)
-        for i in range(100):
-            x1 = s.get(url=server_ip + demo_random_sleep)
-            logger.info(x1.status_code)
-            logger.info(x1.text)
+    try:
+        params = simplejson.dumps({})
+        headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
+        conn = http.client.HTTPConnection(server_ip)
+        url = demo_random_sleep + protect_pod_name
+        conn.request('GET', url=url, body=params, headers=headers)
+        response = conn.getresponse()
+        logger.info(response.status)
+        logger.info(response.read().decode('utf-8'))
+        conn.close()
+    except Exception as e:
+        logger.error(e)
 
 
 # 延迟大约500 ms
 def LatencyAtQuantileMS():
-    with requests.Session() as s:
-        s.headers.update(headers)
-        for i in range(100):
-            time.sleep(1)
-            url = server_ip+demo_random_sleep
-            x1 = s.get(url=url)
-            logger.info(x1.text)
+    try:
+        params = simplejson.dumps({})
+        headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
+        url = demo_random_sleep + protect_pod_name
+        conn = http.client.HTTPConnection(server_ip)
+        conn.request('GET', url=url, body=params, headers=headers)
+        response = conn.getresponse()
+        logger.info(response.status)
+        logger.info(response.read().decode('utf-8'))
+        conn.close()
+    except Exception as e:
+        logger.error(e)
 
 
 # 响应错误率
 def ResponseCodeRatio():
-    with requests.Session() as s:
-        s.headers.update(headers)
-        for i in range(100):
-            x1 = s.get(url=server_ip+demo_error_code)
-            print(x1.url)
-            logger.info(x1.status_code)
-            logger.info(x1.text)
+    try:
+        params = simplejson.dumps({})
+        headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
+        url = demo_error_code + protect_pod_name
+        conn = http.client.HTTPConnection(server_ip)
+        conn.request('GET', url=url, body=params, headers=headers)
+        response = conn.getresponse()
+        logger.info(response.status)
+        logger.info(response.read().decode('utf-8'))
+        conn.close()
+    except Exception as e:
+        logger.error(e)
+
+
+def recycle_call(func):
+    for i in range(1000):
+        time.sleep(1)
+        logger.info(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+        func()
 
 
 if __name__ == "__main__":
-    server_ip = "http://39.106.1.207/v1"
+    # server_ip = "39.106.1.207"
+    server_ip = "10.203.40.97"
     # NetworkErrorRatio()
-    LatencyAtQuantileMS()
+    # LatencyAtQuantileMS()
     # ResponseCodeRatio()
+    recycle_call(ResponseCodeRatio)

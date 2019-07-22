@@ -32,7 +32,7 @@ def server_info():
 
 # return error code
 def error_code():
-    pod_info =  dict({"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip})
+    pod_info = dict({"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip})
     pod_info["type"] = "error_code"
     # 传入被保护的pod的name,可正常返回
     protect_pod_name: str = request.values.get("protect_pod_name", "pod")
@@ -40,8 +40,8 @@ def error_code():
         pod_info["protect"] = True
         return simplejson.dumps({"error-id": 0, "data": pod_info})
     # 按比率随机返回错误状态
-    if random.randint(1, 100) > 50:
-        return Response(simplejson.dumps({"error-id": 500, "data": pod_info}), status=500, mimetype='application/json')
+    if random.randint(1, 100) > 10:
+        return Response(simplejson.dumps({"error-id": 500, "data": pod_info}), status=501, mimetype='application/json')
 
     return simplejson.dumps({"error-id": 0, "data": pod_info})
 
