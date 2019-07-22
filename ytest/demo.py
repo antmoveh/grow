@@ -1,4 +1,3 @@
-import requests
 from config import logger
 import time
 import http.client
