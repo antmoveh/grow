@@ -4,7 +4,7 @@ metadata:
   name: demo-server
   namespace: default
   annotations:
-    traefik.backend.circuitbreaker: "LatencyAtQuantileMS(50.0) > 500"
+    traefik.backend.circuitbreaker: "LatencyAtQuantileMS(50.0) > 50"
 spec:
   selector:
     app: demo

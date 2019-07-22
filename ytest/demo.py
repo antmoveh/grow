@@ -11,7 +11,7 @@ demo_random_sleep = "/v1/demo/random/sleep"
 demo_server_info = "/v1/demo/server/info"
 demo_error_code = "/v1/demo/error/code"
 server_ip = "http://127.0.0.1:8008"
-protect_pod_name = "?protect_pod_name=demo-fsvbg"  # 被保护的pod，接收到此值时会跳过错误逻辑
+protect_pod_name = "?protect_pod_name=demo-xswtk"  # 被保护的pod，接收到此值时会跳过错误逻辑
 host = "server-dispatch.server"
 
 
@@ -31,12 +31,12 @@ def NetworkErrorRatio():
         logger.error(e)
 
 
-# 延迟大约500 ms
+# 延迟大于500ms
 def LatencyAtQuantileMS():
     try:
         params = simplejson.dumps({})
         headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
-        url = demo_random_sleep + protect_pod_name
+        url = demo_server_info
         conn = http.client.HTTPConnection(server_ip)
         conn.request('GET', url=url, body=params, headers=headers)
         response = conn.getresponse()
@@ -65,7 +65,7 @@ def ResponseCodeRatio():
 
 def recycle_call(func):
     for i in range(1000):
-        time.sleep(1)
+        time.sleep(0.5)
         logger.info(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         func()
 
