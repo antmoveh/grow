@@ -1,5 +1,5 @@
 from . import *
-from config import pod_info, pod_name
+from config import *
 from flask import Response
 import random
 import simplejson
@@ -9,6 +9,7 @@ import time
 # sleep random time
 @response_json
 def random_sleep():
+    pod_info = dict({"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip})
     pod_info["type"] = "random_sleep"
     # 传入被保护的pod的name,可正常返回
     protect_pod_name: str = request.values.get("protect_pod_name", "pod")
@@ -25,11 +26,13 @@ def random_sleep():
 # return pod info
 @response_json
 def server_info():
+    pod_info = {"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip}
     return pod_info
 
 
 # return error code
 def error_code():
+    pod_info =  dict({"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip})
     pod_info["type"] = "error_code"
     # 传入被保护的pod的name,可正常返回
     protect_pod_name: str = request.values.get("protect_pod_name", "pod")
@@ -45,6 +48,7 @@ def error_code():
 
 # return error net
 def error_net():
+    pod_info = dict({"node_ip": node_ip, "pod_name": pod_name, "pod_namespace": pod_namespace, "pod_ip": pod_ip})
     pod_info["type"] = "error_net"
     # 传入被保护的pod的name,可正常返回
     protect_pod_name: str = request.values.get("protect_pod_name", "pod")
