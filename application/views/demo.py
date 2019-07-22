@@ -40,7 +40,7 @@ def error_code():
         pod_info["protect"] = True
         return simplejson.dumps({"error-id": 0, "data": pod_info})
     # 按比率随机返回错误状态
-    if random.randint(1, 100) > 10:
+    if random.randint(1, 100) > 55:
         return Response(simplejson.dumps({"error-id": 500, "data": pod_info}), status=501, mimetype='application/json')
 
     return simplejson.dumps({"error-id": 0, "data": pod_info})

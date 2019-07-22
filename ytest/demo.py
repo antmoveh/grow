@@ -21,7 +21,7 @@ def NetworkErrorRatio():
         params = simplejson.dumps({})
         headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
         conn = http.client.HTTPConnection(server_ip)
-        url = demo_random_sleep + protect_pod_name
+        url = demo_server_info
         conn.request('GET', url=url, body=params, headers=headers)
         response = conn.getresponse()
         logger.info(response.status)
@@ -36,7 +36,7 @@ def LatencyAtQuantileMS():
     try:
         params = simplejson.dumps({})
         headers = {"Content-type": "text/json", "Accept": "text/plain", "Host": "server-dispatch.server"}
-        url = demo_server_info
+        url = demo_random_sleep + protect_pod_name
         conn = http.client.HTTPConnection(server_ip)
         conn.request('GET', url=url, body=params, headers=headers)
         response = conn.getresponse()

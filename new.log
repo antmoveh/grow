@@ -1,0 +1,168 @@
+INFO 2019-07-22 18:07:28
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:07:29
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:07:29
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:07:30
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:07:31
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:07:31
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:07:32
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:07:32
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:07:33
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:07:33
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:07:34
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:07:35
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:07:35
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:07:36
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:07:36
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:07:37
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:08:37
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:08:38
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:39
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:08:39
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:40
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:08:40
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:41
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:08:41
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:08:42
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:08:43
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:08:44
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:08:44
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
+INFO 2019-07-22 18:08:45
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:46
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:46
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:47
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:47
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:48
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:48
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:49
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:49
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:50
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:51
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:51
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:52
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:52
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:53
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:53
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:54
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:55
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:55
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:56
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:56
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:57
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:57
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:58
+INFO 200
+INFO {"error-id": 0, "data": {"node_ip": "10.203.40.99", "pod_name": "demo-xswtk", "pod_namespace": "default", "pod_ip": "13.13.16.239", "type": "error_code", "protect": true}}
+INFO 2019-07-22 18:08:58
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:08:59
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.98", "pod_name": "demo-kz8xv", "pod_namespace": "default", "pod_ip": "13.13.15.248", "type": "error_code"}}
+INFO 2019-07-22 18:09:00
+INFO 503
+INFO Service Unavailable
+INFO 2019-07-22 18:09:00
+INFO 501
+INFO {"error-id": 500, "data": {"node_ip": "10.203.40.97", "pod_name": "demo-mhqj8", "pod_namespace": "default", "pod_ip": "13.13.13.243", "type": "error_code"}}
