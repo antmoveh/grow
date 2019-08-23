@@ -36,6 +36,16 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
+        - name: APP_ID
+          value: demo
+        - name: CLUSTER
+          value: demo
+        - name: CONFIG_SERVER_URL
+          value: http://47.105.36.116:9280
+        - name: SVC_NAME
+          value: demo-server
+        - name: NAMESPACE
+          value: demo
         image: antmoveh/norm:latest
         imagePullPolicy: Always
         name: demo

@@ -1,7 +1,17 @@
-from config import logger
+
 import time
 import http.client
 import simplejson
+
+
+import logging
+
+logging.basicConfig(level=logging.INFO,
+                    filename="new.log",
+                    filemode="a",
+                    format='%(levelname)s %(message)s',
+                    datefmt='%a, %d %b %Y %H:%M:%S')
+logger = logging.getLogger()
 
 # https://www.jianshu.com/p/32cd4b9d5a04
 # 原来我也以为requests 无所不能 血泪教训啊
@@ -92,4 +102,4 @@ if __name__ == "__main__":
     # NetworkErrorRatio()
     # LatencyAtQuantileMS()
     # ResponseCodeRatio()
-    recycle_call(ResponseCodeRatio)
+    recycle_call(LatencyAtQuantileMS)
