@@ -4,4 +4,9 @@
 
 + Jenkinsfile
 + traefik
+  - /demo/random/sleep
+  - /demo/server/info
+  - /demo/error/code
+  - /demo/error/net
 + apollo
+  - /demo/apollo/values
