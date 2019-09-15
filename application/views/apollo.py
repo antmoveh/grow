@@ -1,5 +1,7 @@
+# 测试apollo配置中心
 
-from . import *
+from flask import request
+from application.main.response import response_json
 from config import client, namespace, node_ip, pod_namespace, pod_ip, pod_name, svc_name
 
 

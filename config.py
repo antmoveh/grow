@@ -27,4 +27,3 @@ client = ApolloClient(app_id=app_id, cluster=cluster, config_server_url=config_s
 #client.start()
 t = threading.Thread(target=client.start, kwargs={"catch_signals": False})
 t.start()
-print(client.ip)

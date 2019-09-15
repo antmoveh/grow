@@ -2,6 +2,7 @@
 from application import app
 from application.views import demo
 from application.views import apollo
+from application.views import prometheus
 
 
 # 测试模拟接口
@@ -12,3 +13,6 @@ app.add_url_rule("/demo/error/net", view_func=demo.error_net, methods=["GET"])
 
 # apollo 测试
 app.add_url_rule("/demo/apollo/values", view_func=apollo.apollo_values, methods=["POST"])
+
+# prometheus metrics
+app.add_url_rule("/metrics", view_func=prometheus.metrics, methods=["GET"])

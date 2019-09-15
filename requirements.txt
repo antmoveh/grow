@@ -5,4 +5,5 @@ simplejson==3.16.0
 gevent==1.3.7
 gunicorn==19.9.0
 requests==2.20.0
-# git+https://github.com/filamoon/pyapollo.git@master
+prometheus-client==0.7.1
+git+https://github.com/filamoon/pyapollo.git@master

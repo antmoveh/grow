@@ -1,4 +1,8 @@
-from . import *
+
+# 测试traefik熔断使用的接口
+
+from flask import request
+from application.main.response import response_json
 from config import *
 from flask import Response
 import random
