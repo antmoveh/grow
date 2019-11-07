@@ -12,3 +12,5 @@
   - /demo/apollo/values
 + prometheus
   - /metrics
++ pytest
+  - 根目录执行命令pytest

@@ -18,12 +18,14 @@ pod_ip = os.getenv("POD_IP", "default")
 
 app_id = os.getenv("APP_ID", "SampleApp")
 cluster = os.getenv("CLUSTER", "default")
-config_server_url = os.getenv("CONFIG_SERVER_URL", "http://localhost:8080")
+config_server_url = os.getenv("CONFIG_SERVER_URL", "")
 svc_name = os.getenv("SVC_NAME")
 namespace = os.getenv("NAMESPACE", "default")
 
+client = None
 
-client = ApolloClient(app_id=app_id, cluster=cluster, config_server_url=config_server_url, timeout=65, ip=svc_name)
-#client.start()
-t = threading.Thread(target=client.start, kwargs={"catch_signals": False})
-t.start()
+if config_server_url != "":
+    client = ApolloClient(app_id=app_id, cluster=cluster, config_server_url=config_server_url, timeout=65, ip=svc_name)
+    #client.start()
+    t = threading.Thread(target=client.start, kwargs={"catch_signals": False})
+    t.start()

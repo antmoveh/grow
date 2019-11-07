@@ -6,4 +6,5 @@ gevent==1.3.7
 gunicorn==19.9.0
 requests==2.20.0
 prometheus-client==0.7.1
+pytest==5.2.2
 git+https://github.com/filamoon/pyapollo.git@master
